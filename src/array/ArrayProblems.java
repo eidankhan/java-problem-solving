@@ -1,6 +1,7 @@
 package array;
 
 public class ArrayProblems {
+    
     public void findPairWithGivenSum(int[] array, int sum){
         boolean found = false;
         for(int counter = 0; counter < array.length; counter++){
@@ -18,5 +19,27 @@ public class ArrayProblems {
         }
         if(!found)
             System.out.println("Pair not found");
+    }
+
+    public void checkSubArrayWithTargetedSum(int array[], int targetedSum){
+        for(int x=0; x<array.length; x++){
+            int sum = 0;
+            for(int y=x; y<array.length; y++){
+               sum += array[y];
+               if(sum == targetedSum){
+                   int lower = x;
+                   int higher = y;
+                   System.out.print("{");
+                   while(lower <= higher){
+                       System.out.print(array[lower]);
+                       ++lower;
+                       if(lower <= higher)
+                            System.out.print(",");
+                   }
+                   System.out.println("}");
+                   //System.out.println("Sub array with length "+length+"["+ x+"..."+y+"]");
+               }
+            }
+        }
     }
 }
