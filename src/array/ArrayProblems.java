@@ -136,4 +136,24 @@ public class ArrayProblems {
         }
         System.out.println("}\n");
     }
+
+
+    public void findMaxProductOfTwoIntegers(int[] array){
+        // {-10, -3, 5, 6, -2}
+
+        int maxProduct = 1;
+        System.out.print("The maximum product is of the pair(s) ");
+        for(int x=0; x<array.length; x++){
+            for(int y=x+1; y<array.length; y++){
+                if( maxProduct <= array[x]*array[y])
+                {
+                    maxProduct = array[x]*array[y];
+                    System.out.print("("+array[x]+","+array[y]+")");
+                }
+            }
+        }
+        System.out.println("");
+    }
+
+
 }

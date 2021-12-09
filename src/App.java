@@ -26,8 +26,10 @@ public class App {
         System.out.println("]");
         */
         //arrayProblems.findMaxLengthSubarray(array, 8);
-        int[] binaryArray =  { 1, 1, 1, 0, 1, 0, 0 };
-        arrayProblems.findLargestSubarrayWithEqualNumberOfZerosAndOnes(binaryArray);
+        // int[] binaryArray =  { 1, 1, 1, 0, 1, 0, 0 };
+        // arrayProblems.findLargestSubarrayWithEqualNumberOfZerosAndOnes(binaryArray);
+        int[] arr = {-10, -3, 5, 6, -2};
+        arrayProblems.findMaxProductOfTwoIntegers(arr);
 
     }
 }
