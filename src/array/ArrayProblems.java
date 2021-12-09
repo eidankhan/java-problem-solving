@@ -66,4 +66,42 @@ public class ArrayProblems {
         }
         return array;
     }
+
+    public void findMaxLengthSubarray(int[] array, int targetedSum){
+        int maxLength = 0;
+        int lowest = 0;
+        System.out.println("Subarrays with sum "+targetedSum+" are ");
+        for(int x=0; x<array.length; x++){
+            int sum = 0;
+            for(int y=x; y<array.length; y++){
+               sum += array[y];
+               if(sum == targetedSum){
+                   int lower = x;
+                   int higher = y;
+                   if(maxLength < higher-lower)
+                   {
+                        maxLength = higher-lower;
+                        lowest = lower;
+                   }
+                   System.out.print("{");
+                   while(lower <= higher){
+                       System.out.print(array[lower]);
+                       ++lower;
+                       if(lower <= higher)
+                            System.out.print(",");
+                   }
+                   System.out.println("}");
+               }
+            }
+        }
+        System.out.print("The longest subarray is {");
+        while(lowest < maxLength){
+            System.out.print(array[lowest]);
+            ++lowest;
+            if(lowest < maxLength)
+                System.out.print(",");
+        }
+        System.out.println("}");
+        
+    }
 }
