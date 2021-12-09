@@ -1,7 +1,7 @@
 package array;
 
 public class ArrayProblems {
-    
+
     public void findPairWithGivenSum(int[] array, int sum){
         boolean found = false;
         for(int counter = 0; counter < array.length; counter++){
@@ -11,8 +11,6 @@ public class ArrayProblems {
                     if(pair == sum){
                         found = true;
                         System.out.println("Pair found ("+array[counter]+","+array[index]+")");
-                        array[counter] = 0;
-                        array[index] = 0;
                     }
                 }
             }
@@ -37,9 +35,23 @@ public class ArrayProblems {
                             System.out.print(",");
                    }
                    System.out.println("}");
-                   //System.out.println("Sub array with length "+length+"["+ x+"..."+y+"]");
                }
             }
         }
+    }
+
+    public int[] sortBinaryArray(int[] array){
+        // Input:  { 1, 0, 1, 0, 1, 0, 0, 1 }
+
+        for(int index=0; index<array.length; index++){
+            for(int x=index+1; x<array.length; x++){
+                if(array[index] > array[x]){
+                    int temp = array[index];
+                    array[index] = array[x];
+                    array[x] = temp;
+                }
+            }
+        }
+        return array;
     }
 }
