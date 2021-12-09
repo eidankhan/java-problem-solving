@@ -25,7 +25,9 @@ public class App {
         }
         System.out.println("]");
         */
-        arrayProblems.findMaxLengthSubarray(array, 8);
+        //arrayProblems.findMaxLengthSubarray(array, 8);
+        int[] binaryArray =  { 1, 1, 1, 0, 1, 0, 0 };
+        arrayProblems.findLargestSubarrayWithEqualNumberOfZerosAndOnes(binaryArray);
 
     }
 }

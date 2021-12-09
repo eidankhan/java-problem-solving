@@ -104,4 +104,36 @@ public class ArrayProblems {
         System.out.println("}");
         
     }
+
+    public void findLargestSubarrayWithEqualNumberOfZerosAndOnes(int[] array){
+        // Input:  { 0, 0, 1, 0, 1, 0, 0 };
+        int maxLength = 0;
+        int lowest = 0;
+        for(int x=0; x<array.length; x++){
+            int numberOfZeros = 0 ;
+            int numberOfOnes = 0;
+            for(int y=x; y<array.length; y++){
+                if(array[y]==0)
+                    numberOfZeros++;
+                else if(array[y]==1)
+                    numberOfOnes++;
+                
+                if(numberOfZeros == numberOfOnes){
+                    if(maxLength < y-x)
+                    {
+                        maxLength = y-x;
+                        lowest = x;
+                    }
+                }
+            }
+        }
+        System.out.print("\nThe largest subarray with equal number of ones and zeros is {");
+        while(lowest <= maxLength+1){
+            System.out.print(array[lowest]);
+            ++lowest;
+            if(lowest <= maxLength+1)
+                System.out.print(",");
+        }
+        System.out.println("}\n");
+    }
 }
