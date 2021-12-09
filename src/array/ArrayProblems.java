@@ -41,7 +41,6 @@ public class ArrayProblems {
     }
 
     public int[] sortBinaryArray(int[] array){
-        // Input:  { 1, 0, 1, 0, 1, 0, 0, 1 }
 
         for(int index=0; index<array.length; index++){
             for(int x=index+1; x<array.length; x++){
@@ -49,6 +48,19 @@ public class ArrayProblems {
                     int temp = array[index];
                     array[index] = array[x];
                     array[x] = temp;
+                }
+            }
+        }
+        return array;
+    }
+
+    public int[] rearrangeEvenOddNumbers(int[] array){
+        for(int x=0; x<array.length; x++){
+            for(int y=x+1; y<array.length; y++){
+                if(array[y] % 2 == 0){
+                    int temp = array[x];
+                    array[x] = array[y];
+                    array[y] = temp;
                 }
             }
         }
